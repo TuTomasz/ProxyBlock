@@ -17,7 +17,7 @@ Once all python dependencies are installed return to ProxyBlock main directory a
 
 `npm install`
 
-Once all modules are installed create a .env file and supplie the folowing information
+Once all modules are installed create a .env file and supply the folowing information
 
     NGROK_TOKEN = REPLACE_WITH_NGROK_TOKEN
     PROXY_NUMBER = REPLACE_WITH_PROXY NUMBER
