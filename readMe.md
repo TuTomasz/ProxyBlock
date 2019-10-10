@@ -33,7 +33,7 @@ Once all modules are installed create a .env file and supply the folowing inform
 
 ## Usage 
 
-To start the program after all the steps above have ben compleated run.
+To start the program after all the steps above have been compleated run.
 
 `node server.js`
 
