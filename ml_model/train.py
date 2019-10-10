@@ -37,10 +37,10 @@ labels = data["label"]
 messages = data["message"]
 
 # adjust number of features
-num_of_features = 2000
+numOfFeatures = 2000
 
 # initialize vectorizer
-vectorizer = TfidfVectorizer(max_features=num_of_features)
+vectorizer = TfidfVectorizer(max_features=numOfFeatures)
 
 # vectors created from input messages
 vectors = vectorizer.fit_transform(messages).toarray()
@@ -52,10 +52,10 @@ X_train,X_test,Y_train,Y_test = train_test_split(vectors,labels,random_state=30,
 # Keras model
 model = keras.models.Sequential()
 
-model.add(keras.layers.Dense(500,activation='sigmoid',input_shape=(num_of_features,)))
-model.add(keras.layers.Dropout(0.2, input_shape=(num_of_features,)))
+model.add(keras.layers.Dense(500,activation='sigmoid',input_shape=(numOfFeatures,)))
+model.add(keras.layers.Dropout(0.2, input_shape=(numOfFeatures,)))
 model.add(keras.layers.Dense(250,activation='sigmoid'))
-model.add(keras.layers.Dropout(0.2, input_shape=(num_of_features,)))
+model.add(keras.layers.Dropout(0.2, input_shape=(numOfFeatures,)))
 model.add(keras.layers.Dense(1,activation='sigmoid'))
 
 model.compile(optimizer='rmsprop', loss='binary_crossentropy',metrics=['accuracy'])
@@ -96,29 +96,6 @@ def testNN_Model(model,message):
     print("NOT SPAM")
 
 
-# Test messages
 
-messageInput =  "Your family won a amazing trip to las vegas text 4567 to claim your prize now"
-  
-messageInput2 =  "You won a free gift Game Call of Duty for xbox"
-
-messageInput3 =  "Can you buy me doritos on your way home."
-
-messageInput4 =  "I have been working on this neural net for hours and hours"
-
-messageInput5 =  "claim you a 20% discount on your purchase "
-
-
-# test runs
-
-testNN_Model(model,messageInput)
-
-testNN_Model(model,messageInput2)
-
-testNN_Model(model,messageInput3)
-
-testNN_Model(model,messageInput4)
-
-testNN_Model(model,messageInput5)
 
 

@@ -23,7 +23,7 @@ let userNumber
             proto: 'http',
             addr: 8081, // port or network address, defaults to 8080
             subdomain: 'proxyblock', // my reserved tunnel name
-            authtoken: process.env.NGROK_TOKEN, // Your it 
+            authtoken: process.env.NGROK_TOKEN, // Your ngrok tunnel url
             region: 'us', // region
         });
         console.log("SERVER IS LIVE AT ".yellow + url + "\n")
@@ -51,12 +51,11 @@ app.use(bodyParser.urlencoded({ extended: false }))
  * USER INPUTS 
  */
 
-
 // Prompt for getting users real number
 console.log("\nWELCOME TO PROXYBLOCK\n".rainbow)
 
 // User input
-let input = readlineSync.question("Enter your phone number ex. 646-400-1776: ");
+let input = readlineSync.question("Enter your phone number ex. 646-222-2222: ");
 
 // validate phone number
 while (!validatePhoneNumber(input)) {
@@ -73,7 +72,6 @@ console.log("YOUR MAY NOW USE YOUR PROXY NUMBER\nALL NON-SPAM MESSAGES WILL BE F
 /** 
  * ROUTES
  */
-
 
 // main route
 app.get('/', (req, res) => { res.send("Hello this is a `ProxyBlock` Server") })
@@ -122,7 +120,5 @@ app.post('/message', (req, res) => {
 
 
 })
-
-
 
 app.listen(port, () => console.log("SERVER RUNNING ON PORT ".yellow + `${port}`))
