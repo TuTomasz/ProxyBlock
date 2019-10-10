@@ -1,3 +1,4 @@
+require('dotenv/config')
 const express = require('express')
 const bodyParser = require('body-parser')
 const twilio = require('twilio');
@@ -8,7 +9,7 @@ const { validatePhoneNumber } = require('./js/validator')
 const { spawn } = require('child_process');
 
 // Globals
-let proxyNumber = "9179050846"
+let proxyNumber = process.env.PROXY_NUMBER
 let userNumber
 
 /** 
@@ -22,7 +23,7 @@ let userNumber
             proto: 'http',
             addr: 8081, // port or network address, defaults to 8080
             subdomain: 'proxyblock', // my reserved tunnel name
-            authtoken: '', // my authtoken 
+            authtoken: process.env.NGROK_TOKEN, // Your it 
             region: 'us', // region
         });
         console.log("SERVER IS LIVE AT ".yellow + url + "\n")
@@ -34,8 +35,8 @@ let userNumber
 })();
 
 // initialize Twilio API
-var accountSid = ''; // Your Account SID 
-var authToken = '';   // Your Auth Token 
+var accountSid = process.env.TWILIO_SID; // Your Account SID from www.twilio.com/console
+var authToken = process.env.TWILIO_TOKEN;   // Your Auth Token from www.twilio.com/console
 var client = new twilio(accountSid, authToken);
 
 // initialize Express app
