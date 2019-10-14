@@ -6,6 +6,8 @@ import pandas as pd
 import sys
 import os
 
+# Get a prediction based on supplied message and model
+
 def getPrediction(model,message, vectorizer):
   
     # message in vector form
@@ -20,6 +22,8 @@ def getPrediction(model,message, vectorizer):
 
     else:
         print("NOT SPAM")
+
+# Initialize vectorizer to process new messages.
 
 def initVectorizer():
   

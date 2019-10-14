@@ -73,29 +73,6 @@ model.save('data/spamModel.h5')
 
 
 
-def testNN_Model(model,message):
-
-  """
-  Description: Test trained model with test messages
-  :return String Spam or Not Spam
-  """
-  
-  # vectorize message string
-  vector = vectorizer.transform([message]).toarray()
-  
-  # make a prediction
-  prediction = model.predict_classes(vector)
-  
-  #display result
-  if prediction == 1:
-    
-    print("SPAM")
-    
-  else:
-    
-    print("NOT SPAM")
-
-
 
 
 
