@@ -7,7 +7,12 @@
 ProxyBlock is a machine learning integrated spam filtering application that supplies a user with a proxy phone number that they can give out to high-risk contacts like (stores, websites and unknown contacts). The application works with actual phone numbers by forwarding non-spam messages to the user’s actual phone and blocks all other incoming spam SMS messages using a given proxy phone number.
 
 
-  
+### Ok's legitimate messages
+![](graphic1.gif)
+
+### Rejects spam
+![](graphic2.gif)
+
 
 ## Installation
 
@@ -55,9 +60,9 @@ TWILIO_TOKEN = REPLACE_WITH_TWILLIO_TOKEN
 
   
 
-- Ngrok token is supplied with Assigment 6
+- Sign up for Ngrok and generate a tunnel
 
-- A phone number needs to be generated in the Twillio account. And assigned a webhook address supplied in the assignment 6 word doc.
+- A phone number needs to be generated in the Twillio account. Assigned a webhook address created on the Ngrok website.
 
 - Twillio SID and TOKEN are in the Twillio console page
 
