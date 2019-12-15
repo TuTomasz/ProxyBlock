@@ -1,9 +1,6 @@
 
 # ProxyBlock
 
-  
-  
-
 ProxyBlock is a machine learning integrated spam filtering application that supplies a user with a proxy phone number that they can give out to high-risk contacts like (stores, websites and unknown contacts). The application works with actual phone numbers by forwarding non-spam messages to the user’s actual phone and blocks all other incoming spam SMS messages using a given proxy phone number.
 
 
@@ -16,33 +13,19 @@ ProxyBlock is a machine learning integrated spam filtering application that supp
 
 ## Installation
 
-  
-
-Download the repository into a desired directory create a seperate python environment using virtualenv.
-
-  
+Download the repository into the desired directory create a separate python environment using virtualenv.
 
 `virtualenv -p python3 <desired-path>`
 
-  
-
 Activate the virtual environment and cd into ml_model folder and run:
-
-  
 
 `pip install -r requirements.txt`
 
-  
-
 Once all python dependencies are installed return to ProxyBlock main directory and install all node packages using:
-
-  
 
 `npm install`
 
-  
-
-Once all modules are installed create a .env file and supply the folowing information
+Once all modules are installed create a .env file and supply the following information
 
   
 
@@ -62,11 +45,11 @@ TWILIO_TOKEN = REPLACE_WITH_TWILLIO_TOKEN
 
 - Sign up for Ngrok and generate a tunnel
 
-- A phone number needs to be generated in the Twillio account. Assigned a webhook address created on the Ngrok website.
+- A phone number needs to be generated in the Twilio account. Assigned a webhook address created on the Ngrok website.
 
-- Twillio SID and TOKEN are in the Twillio console page
+- Twilio SID and TOKEN are in the Twillio console page
 
-- Anny number that you want to test this functionality with needs to be whitelisted in the Twilio API this is a limitation of the trial account.
+- Any number that you want to test this functionality with needs to be whitelisted in the Twilio API this is a limitation of the trial account.
 
   
 
@@ -74,7 +57,7 @@ TWILIO_TOKEN = REPLACE_WITH_TWILLIO_TOKEN
 
   
 
-To start the program after all the steps above have been compleated run.
+To start the program after all the steps above have been completed run.
 
   
 
